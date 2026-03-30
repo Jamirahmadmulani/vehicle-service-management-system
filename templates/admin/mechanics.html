@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Mechanics</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5">
+
+<div class="container" style="max-width: 600px;">
+    <h2 class="mb-4 text-primary"> Manage Mechanics</h2>
+
+    <!-- Back to Admin Dashboard -->
+    <a href="/admin" class="btn btn-secondary mb-4 w-100"> Back to Admin Dashboard</a>
+
+    <!-- Add Mechanic Form -->
+    <form method="POST" class="mb-4">
+        <div class="mb-3">
+            <input name="name" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="mb-3">
+            <input name="email" class="form-control" placeholder="Email" type="email" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100"> Add Mechanic</button>
+    </form>
+
+    <!-- List of Mechanics -->
+    {% if mechanics %}
+        {% for m in mechanics %}
+        <div class="card mb-2 shadow-sm">
+            <div class="card-body">
+                <p class="mb-0"><strong>{{ m.name }}</strong> - {{ m.email }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-muted">No mechanics added yet.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
