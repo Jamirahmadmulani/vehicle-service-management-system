@@ -13,13 +13,13 @@ with app.app_context():
     db.create_all()
 
 
-# ---------------- HOME ----------------
+
 @app.route('/')
 def home():
     return render_template('home.html')
 
 
-# ================= USER SIDE =================
+
 
 @app.route('/user')
 def user_dashboard():
@@ -79,7 +79,7 @@ def add_booking():
     return render_template('user/add_booking.html')
 
 
-# ================= ADMIN SIDE =================
+
 
 @app.route('/admin')
 def admin_dashboard():
