@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-# ---------------- MECHANIC MODEL ----------------
+# MECHANIC MODEL 
 class Mechanic(db.Model):
     __tablename__ = "mechanic"
 
@@ -14,7 +14,7 @@ class Mechanic(db.Model):
     bookings = db.relationship("Booking", backref="mechanic", lazy=True)
 
 
-# ---------------- VEHICLE MODEL ----------------
+#  VEHICLE MODEL 
 class Vehicle(db.Model):
     __tablename__ = "vehicle"
 
@@ -28,7 +28,7 @@ class Vehicle(db.Model):
     bookings = db.relationship("Booking", backref="vehicle", lazy=True)
 
 
-# ---------------- BOOKING MODEL ----------------
+# BOOKING MODEL 
 class Booking(db.Model):
     __tablename__ = "booking"
 
